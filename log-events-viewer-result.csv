@@ -1,0 +1,467 @@
+timestamp,message
+1684909407418,"2023-05-24 06:23:27,416 main WARN JNDI lookup class is not available because this JRE does not support JNDI. JNDI string lookups will not be available, continuing configuration. java.lang.ClassNotFoundException: org.apache.logging.log4j.core.lookup.JndiLookup
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:387)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:352)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:264)
+	at org.apache.logging.log4j.util.LoaderUtil.loadClass(LoaderUtil.java:173)
+	at org.apache.logging.log4j.util.LoaderUtil.newInstanceOf(LoaderUtil.java:211)
+	at org.apache.logging.log4j.util.LoaderUtil.newCheckedInstanceOf(LoaderUtil.java:232)
+	at org.apache.logging.log4j.core.util.Loader.newCheckedInstanceOf(Loader.java:301)
+	at org.apache.logging.log4j.core.lookup.Interpolator.<init>(Interpolator.java:95)
+	at org.apache.logging.log4j.core.config.AbstractConfiguration.<init>(AbstractConfiguration.java:114)
+	at org.apache.logging.log4j.core.config.DefaultConfiguration.<init>(DefaultConfiguration.java:55)
+	at org.apache.logging.log4j.core.layout.PatternLayout$Builder.build(PatternLayout.java:430)
+	at org.apache.logging.log4j.core.layout.PatternLayout.createDefaultLayout(PatternLayout.java:324)
+	at org.apache.logging.log4j.core.appender.ConsoleAppender$Builder.<init>(ConsoleAppender.java:121)
+	at org.apache.logging.log4j.core.appender.ConsoleAppender.newBuilder(ConsoleAppender.java:111)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.logging.log4j.core.config.plugins.util.PluginBuilder.createBuilder(PluginBuilder.java:158)
+	at org.apache.logging.log4j.core.config.plugins.util.PluginBuilder.build(PluginBuilder.java:119)
+	at org.apache.logging.log4j.core.config.AbstractConfiguration.createPluginObject(AbstractConfiguration.java:813)
+	at org.apache.logging.log4j.core.config.AbstractConfiguration.createConfiguration(AbstractConfiguration.java:753)
+	at org.apache.logging.log4j.core.config.AbstractConfiguration.createConfiguration(AbstractConfiguration.java:745)
+	at org.apache.logging.log4j.core.config.AbstractConfiguration.doConfigure(AbstractConfiguration.java:389)
+	at org.apache.logging.log4j.core.config.AbstractConfiguration.initialize(AbstractConfiguration.java:169)
+	at org.apache.logging.log4j.core.config.AbstractConfiguration.start(AbstractConfiguration.java:181)
+	at org.apache.logging.log4j.core.LoggerContext.setConfiguration(LoggerContext.java:446)
+	at org.apache.logging.log4j.core.LoggerContext.reconfigure(LoggerContext.java:520)
+	at org.apache.logging.log4j.core.LoggerContext.reconfigure(LoggerContext.java:536)
+	at org.apache.logging.log4j.core.LoggerContext.start(LoggerContext.java:214)
+	at org.apache.logging.log4j.core.impl.Log4jContextFactory.getContext(Log4jContextFactory.java:146)
+	at org.apache.logging.log4j.core.impl.Log4jContextFactory.getContext(Log4jContextFactory.java:41)
+	at org.apache.logging.log4j.LogManager.getContext(LogManager.java:194)
+	at org.apache.logging.log4j.LogManager.getLogger(LogManager.java:597)
+	at org.apache.spark.metrics.sink.MetricsConfigUtils.<clinit>(MetricsConfigUtils.java:12)
+	at org.apache.spark.metrics.sink.MetricsProxyInfo.fromConfig(MetricsProxyInfo.java:17)
+	at com.amazonaws.services.glue.cloudwatch.CloudWatchLogsAppenderCommon.<init>(CloudWatchLogsAppenderCommon.java:62)
+	at com.amazonaws.services.glue.cloudwatch.CloudWatchLogsAppenderCommon$CloudWatchLogsAppenderCommonBuilder.build(CloudWatchLogsAppenderCommon.java:79)
+	at com.amazonaws.services.glue.cloudwatch.CloudWatchAppender.activateOptions(CloudWatchAppender.java:73)
+	at org.apache.log4j.config.PropertySetter.activate(PropertySetter.java:307)
+	at org.apache.log4j.config.PropertySetter.setProperties(PropertySetter.java:172)
+	at org.apache.log4j.config.PropertySetter.setProperties(PropertySetter.java:104)
+	at org.apache.log4j.PropertyConfigurator.parseAppender(PropertyConfigurator.java:842)
+	at org.apache.log4j.PropertyConfigurator.parseCategory(PropertyConfigurator.java:768)
+	at org.apache.log4j.PropertyConfigurator.configureRootCategory(PropertyConfigurator.java:648)
+	at org.apache.log4j.PropertyConfigurator.doConfigure(PropertyConfigurator.java:514)
+	at org.apache.log4j.PropertyConfigurator.doConfigure(PropertyConfigurator.java:580)
+	at org.apache.log4j.helpers.OptionConverter.selectAndConfigure(OptionConverter.java:526)
+	at org.apache.log4j.LogManager.<clinit>(LogManager.java:127)
+	at org.slf4j.impl.Log4jLoggerFactory.<init>(Log4jLoggerFactory.java:66)
+	at org.slf4j.impl.StaticLoggerBinder.<init>(StaticLoggerBinder.java:72)
+	at org.slf4j.impl.StaticLoggerBinder.<clinit>(StaticLoggerBinder.java:45)
+	at org.slf4j.LoggerFactory.bind(LoggerFactory.java:150)
+	at org.slf4j.LoggerFactory.performInitialization(LoggerFactory.java:124)
+	at org.slf4j.LoggerFactory.getILoggerFactory(LoggerFactory.java:412)
+	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:357)
+	at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:383)
+	at org.apache.spark.network.util.JavaUtils.<clinit>(JavaUtils.java:41)
+	at org.apache.spark.internal.config.ConfigHelpers$.byteFromString(ConfigBuilder.scala:67)
+	at org.apache.spark.internal.config.ConfigBuilder.$anonfun$bytesConf$1(ConfigBuilder.scala:259)
+	at org.apache.spark.internal.config.ConfigBuilder.$anonfun$bytesConf$1$adapted(ConfigBuilder.scala:259)
+	at org.apache.spark.internal.config.TypedConfigBuilder.$anonfun$transform$1(ConfigBuilder.scala:101)
+	at org.apache.spark.internal.config.TypedConfigBuilder.createWithDefault(ConfigBuilder.scala:144)
+	at org.apache.spark.internal.config.package$.<init>(package.scala:345)
+	at org.apache.spark.internal.config.package$.<clinit>(package.scala)
+	at org.apache.spark.SparkConf$.<init>(SparkConf.scala:654)
+	at org.apache.spark.SparkConf$.<clinit>(SparkConf.scala)
+	at org.apache.spark.SparkConf.set(SparkConf.scala:94)
+	at org.apache.spark.SparkConf.$anonfun$loadFromSystemProperties$3(SparkConf.scala:76)
+	at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:788)
+	at scala.collection.immutable.HashMap$HashMap1.foreach(HashMap.scala:230)
+	at scala.collection.immutable.HashMap$HashTrieMap.foreach(HashMap.scala:461)
+	at scala.collection.immutable.HashMap$HashTrieMap.foreach(HashMap.scala:461)
+	at scala.collection.TraversableLike$WithFilter.foreach(TraversableLike.scala:787)
+	at org.apache.spark.SparkConf.loadFromSystemProperties(SparkConf.scala:75)
+	at org.apache.spark.SparkConf.<init>(SparkConf.scala:70)
+	at org.apache.spark.SparkConf.<init>(SparkConf.scala:59)
+	at com.amazonaws.services.glue.SparkProcessLauncherPlugin.getSparkConf(ProcessLauncher.scala:41)
+	at com.amazonaws.services.glue.SparkProcessLauncherPlugin.getSparkConf$(ProcessLauncher.scala:40)
+	at com.amazonaws.services.glue.ProcessLauncher$$anon$1.getSparkConf(ProcessLauncher.scala:90)
+	at com.amazonaws.services.glue.ProcessLauncher.<init>(ProcessLauncher.scala:97)
+	at com.amazonaws.services.glue.ProcessLauncher.<init>(ProcessLauncher.scala:90)
+	at com.amazonaws.services.glue.ProcessLauncher$.main(ProcessLauncher.scala:29)
+	at com.amazonaws.services.glue.ProcessLauncher.main(ProcessLauncher.scala)
+
+"
+1684909407421,"2023-05-24 06:23:27,420 main INFO Log4j appears to be running in a Servlet environment, but there's no log4j-web module available. If you want better web container support, please add the log4j-web JAR to your web archive or server lib directory.
+"
+1684909419446,"s3://airbnb-nequi/listings_edit/listings_edit.csv
+"
+1684909445389,"s3://airbnb-nequi/listings_edit_transfo/e8027af0-9ff8-4af6-8c60-2a39b95e5372-0_0-34-1502_20230524011459152.parquet
+"
+1684909450251,"42688
+"
+1684909459535,"42687
+"
+1684909494398,"el numero de nulos en el id de la tabla listings_edit cruda es: 1
+el numero de nulos en el id de la tabla listings_edit trata es: 0
+ok
+"
+1684909496039,"el numero de caracteres especiales que contiene la tabla listings_edit cruda en la columna name es 21892
+el numero de caracteres especiales que contiene la tabla listings_edit tratada en la columna name es 0
+"
+1684909497302,"el numero de caracteres especiales que contiene la tabla listings_edit cruda en la columna host_name es 1373
+el numero de caracteres especiales que contiene la tabla listings_edit tratada en la columna host_name es 0
+"
+1684909498318,"el numero de caracteres especiales que contiene la tabla listings_edit cruda en la columna neighbourhood_group es 0
+el numero de caracteres especiales que contiene la tabla listings_edit tratada en la columna neighbourhood_group es 0
+"
+1684909506942,"el numero de caracteres especiales que contiene la tabla listings_edit cruda en la columna neighbourhood es 5255
+el numero de caracteres especiales que contiene la tabla listings_edit tratada en la columna neighbourhood es 0
+"
+1684909509530,"el numero de caracteres especiales que contiene la tabla listings_edit cruda en la columna room_type es 24148
+el numero de caracteres especiales que contiene la tabla listings_edit tratada en la columna room_type es 0
+ok
+"
+1684909510562,"el numero de mayusculas que contiene la tabla listings_edit cruda en la columna name es 42066
+el numero de mayusculas que contiene la tabla listings_edit tratada en la columna name es 0
+"
+1684909511698,"el numero de mayusculas que contiene la tabla listings_edit cruda en la columna host_name es 42644
+el numero de mayusculas que contiene la tabla listings_edit tratada en la columna host_name es 0
+"
+1684909512893,"el numero de mayusculas que contiene la tabla listings_edit cruda en la columna neighbourhood_group es 42688
+el numero de mayusculas que contiene la tabla listings_edit tratada en la columna neighbourhood_group es 0
+"
+1684909513824,"el numero de mayusculas que contiene la tabla listings_edit cruda en la columna neighbourhood es 42688
+el numero de mayusculas que contiene la tabla listings_edit tratada en la columna neighbourhood es 0
+"
+1684909517394,"el numero de mayusculas que contiene la tabla listings_edit cruda en la columna room_type es 42688
+el numero de mayusculas que contiene la tabla listings_edit tratada en la columna room_type es 0
+ok
+esto no se evalua en la tabla listing_editda
+ok
+el pipeline funciono de manera correcta para la base listings_edit
+"
+1684909532454,"el numero de duplicados de la tabla listings_edit cruda es: 0
+el numero de duplicados de la tabla listings_edit trata es: 0
+ok
+"
+1684909534091,"el numero de registros para la tabla listings_edit cruda es 42688
+el numero de registros para la tabla listings_edit tratada es 42687
+ok
+"
+1684909534111,"los tipos de datos de la tabla listings_edit cruda son
+"
+1684909534112,"[('id', 'string'), ('name', 'string'), ('host_id', 'string'), ('host_name', 'string'), ('neighbourhood_group', 'string'), ('neighbourhood', 'string'), ('latitude', 'string'), ('longitude', 'string'), ('room_type', 'string'), ('price', 'string'), ('minimum_nights', 'string'), ('number_of_reviews', 'string'), ('last_review', 'string'), ('reviews_per_month', 'string'), ('calculated_host_listings_count', 'string'), ('availability_365', 'string'), ('number_of_reviews_ltm', 'string')]
+los tipos de datos de la tabla listings_edit tratada son
+"
+1684909534112,"[('id', 'string'), ('name', 'string'), ('host_id', 'string'), ('host_name', 'string'), ('neighbourhood_group', 'string'), ('neighbourhood', 'string'), ('latitude', 'string'), ('longitude', 'string'), ('room_type', 'string'), ('price', 'string'), ('minimum_nights', 'string'), ('number_of_reviews', 'string'), ('last_review', 'string'), ('reviews_per_month', 'string'), ('calculated_host_listings_count', 'string'), ('availability_365', 'string'), ('number_of_reviews_ltm', 'string')]
+ok
+hay calidad en los datos de la tabla listings_edit
+"
+1684909536440,skylit midtown castle
+1684909536441,"
+"
+1684909537035,"1
+ok
+se cumplen las pruebas de unidad para la tabla listings_edit
+"
+1684909537112,"s3://airbnb-nequi/calendar/calendar.csv
+"
+1684909552924,"s3://airbnb-nequi/calendar_transfo/018d18f7-4081-4f6b-beec-b1fc12473d1a-0_47-99-3077_20230524011546621.parquet
+"
+1684909553584,"s3://airbnb-nequi/calendar_transfo/04a15a58-7c2c-417a-bc4d-996dcb66e2c1-0_44-99-3074_20230524011546621.parquet
+"
+1684909554338,"s3://airbnb-nequi/calendar_transfo/05d2d3fc-530e-4398-9b9a-72f646212e1b-0_110-99-3140_20230524011546621.parquet
+"
+1684909555263,"s3://airbnb-nequi/calendar_transfo/069d3fd9-cd60-46fe-bf9e-7f219cb993c3-0_124-99-3154_20230524011546621.parquet
+"
+1684909555822,"s3://airbnb-nequi/calendar_transfo/0bb5cfb2-63a9-4aaf-9a94-e4c30053651d-0_84-99-3114_20230524011546621.parquet
+"
+1684909556565,"s3://airbnb-nequi/calendar_transfo/0ed106f7-ae32-49fb-8bca-daac053973b6-0_72-99-3102_20230524011546621.parquet
+"
+1684909557301,"s3://airbnb-nequi/calendar_transfo/10ae9a70-9c1b-44a2-988c-6a688c0f72e0-0_55-99-3085_20230524011546621.parquet
+"
+1684909557742,"s3://airbnb-nequi/calendar_transfo/123b9259-39f2-4539-bc0a-4c9de108bc23-0_51-99-3081_20230524011546621.parquet
+"
+1684909558451,"s3://airbnb-nequi/calendar_transfo/1707a817-dddd-4dda-a202-4fc5219dffab-0_89-99-3119_20230524011546621.parquet
+"
+1684909558881,"s3://airbnb-nequi/calendar_transfo/1a256edf-0394-433b-adaa-85e308286512-0_95-99-3125_20230524011546621.parquet
+"
+1684909559455,"s3://airbnb-nequi/calendar_transfo/1de5f3e7-24f3-464f-843b-43768e8e4cc6-0_116-99-3146_20230524011546621.parquet
+"
+1684909560023,"s3://airbnb-nequi/calendar_transfo/1f07a493-38f1-4a97-9982-7da217c037ec-0_61-99-3091_20230524011546621.parquet
+"
+1684909560485,"s3://airbnb-nequi/calendar_transfo/203fb48f-9d90-49fd-b7f3-4fb5149c79b6-0_86-99-3116_20230524011546621.parquet
+"
+1684909560920,"s3://airbnb-nequi/calendar_transfo/21e7cb5f-f02c-435c-a80b-41b7cdbf590d-0_62-99-3092_20230524011546621.parquet
+"
+1684909561247,"s3://airbnb-nequi/calendar_transfo/239148c4-5161-4623-bd1c-8f199df593d0-0_77-99-3107_20230524011546621.parquet
+"
+1684909562086,"s3://airbnb-nequi/calendar_transfo/23e567e0-cae4-4886-b6bf-dd17ff06c0af-0_59-99-3089_20230524011546621.parquet
+"
+1684909562625,"s3://airbnb-nequi/calendar_transfo/2438db1a-6b8c-40e2-8ba0-0a5885719c2f-0_16-92-3046_20230524011546621.parquet
+"
+1684909562945,"s3://airbnb-nequi/calendar_transfo/25164e11-6a0d-42e6-96b7-026e71ad588d-0_20-92-3050_20230524011546621.parquet
+"
+1684909563727,"s3://airbnb-nequi/calendar_transfo/26757150-465e-42c9-836a-7893ea1967a7-0_37-99-3067_20230524011546621.parquet
+"
+1684909564064,"s3://airbnb-nequi/calendar_transfo/26b0b774-a42f-4e67-be3f-3938a7cee0d1-0_73-99-3103_20230524011546621.parquet
+"
+1684909564394,"s3://airbnb-nequi/calendar_transfo/2a3df37d-a4ea-4d59-8025-5afaa10902be-0_79-99-3109_20230524011546621.parquet
+"
+1684909564706,"s3://airbnb-nequi/calendar_transfo/2fb380db-58fe-493a-a324-3c33b21a761c-0_80-99-3110_20230524011546621.parquet
+"
+1684909565253,"s3://airbnb-nequi/calendar_transfo/2fcfaf0c-50db-46ba-b502-f2def26f19b8-0_11-92-3041_20230524011546621.parquet
+"
+1684909565739,"s3://airbnb-nequi/calendar_transfo/31d99b20-42b7-46a6-bf34-f1dda1198df5-0_82-99-3112_20230524011546621.parquet
+"
+1684909566686,"s3://airbnb-nequi/calendar_transfo/343b1a9b-b3ec-4d58-ae09-8ae09cd14820-0_18-92-3048_20230524011546621.parquet
+"
+1684909567052,"s3://airbnb-nequi/calendar_transfo/3472eafd-13ea-4897-aadf-2ec3d167dbd1-0_119-99-3149_20230524011546621.parquet
+"
+1684909567607,"s3://airbnb-nequi/calendar_transfo/34903ea7-ef9d-4707-b21e-3956be0c3494-0_107-99-3137_20230524011546621.parquet
+"
+1684909568034,"s3://airbnb-nequi/calendar_transfo/34931b6f-5e1e-4b75-a751-5e0d5471077f-0_43-99-3073_20230524011546621.parquet
+"
+1684909568535,"s3://airbnb-nequi/calendar_transfo/365e88a5-c58d-4b63-bed7-6fc78278c25f-0_35-99-3065_20230524011546621.parquet
+"
+1684909568953,"s3://airbnb-nequi/calendar_transfo/3859ed79-908d-4797-90d1-6b4d7c4fdb13-0_125-106-3155_20230524011546621.parquet
+"
+1684909569397,"s3://airbnb-nequi/calendar_transfo/3cb871e7-59b8-4d7b-8585-d19df226ff47-0_24-92-3054_20230524011546621.parquet
+"
+1684909569769,"s3://airbnb-nequi/calendar_transfo/409d81de-cb0b-49c5-8cd9-e67feef704ab-0_0-78-3030_20230524011546621.parquet
+"
+1684909570201,"s3://airbnb-nequi/calendar_transfo/44cda198-a24a-4ade-af2c-3eea8b72a3db-0_21-92-3051_20230524011546621.parquet
+"
+1684909570541,"s3://airbnb-nequi/calendar_transfo/4508bc62-d53a-447b-9502-6995d95ff6b7-0_94-99-3124_20230524011546621.parquet
+"
+1684909570974,"s3://airbnb-nequi/calendar_transfo/4b671af9-bc9b-473c-a435-0fe506fff81b-0_36-99-3066_20230524011546621.parquet
+"
+1684909571450,"s3://airbnb-nequi/calendar_transfo/5140faaf-8598-4096-a6e4-54bb9ad41db5-0_122-99-3152_20230524011546621.parquet
+"
+1684909571938,"s3://airbnb-nequi/calendar_transfo/53c79d93-09da-44f1-ba19-60a25d7a46f0-0_7-92-3037_20230524011546621.parquet
+"
+1684909572387,"s3://airbnb-nequi/calendar_transfo/53d56295-9a0e-40d9-add5-be4be4b6deb0-0_120-99-3150_20230524011546621.parquet
+"
+1684909573060,"s3://airbnb-nequi/calendar_transfo/554e961f-6373-453d-9c8f-869084889b5a-0_88-99-3118_20230524011546621.parquet
+"
+1684909573442,"s3://airbnb-nequi/calendar_transfo/57c1c1fd-ac8a-4772-b173-1cfcf2d61272-0_102-99-3132_20230524011546621.parquet
+"
+1684909574093,"s3://airbnb-nequi/calendar_transfo/57f90cce-5e6f-41f2-b12f-d08a36aaf0a5-0_76-99-3106_20230524011546621.parquet
+"
+1684909574619,"s3://airbnb-nequi/calendar_transfo/58ab37eb-60ec-4029-a248-413dcf205ed0-0_10-92-3040_20230524011546621.parquet
+"
+1684909575051,"s3://airbnb-nequi/calendar_transfo/59b4ae30-36ca-44d1-a923-274a6e0cd36e-0_19-92-3049_20230524011546621.parquet
+"
+1684909575410,"s3://airbnb-nequi/calendar_transfo/5b2184b4-aa2f-4649-85c3-8be35f9fa278-0_56-99-3086_20230524011546621.parquet
+"
+1684909575747,"s3://airbnb-nequi/calendar_transfo/5b687d21-8b74-48ea-a24c-1318559ffd2f-0_85-99-3115_20230524011546621.parquet
+"
+1684909582628,"s3://airbnb-nequi/calendar_transfo/5f3c830b-a750-4bea-b990-654a8e05be38-0_14-92-3044_20230524011546621.parquet
+"
+1684909583122,"s3://airbnb-nequi/calendar_transfo/617a9f4a-4a19-45ee-94a2-f2b5ab7554e5-0_57-99-3087_20230524011546621.parquet
+"
+1684909583580,"s3://airbnb-nequi/calendar_transfo/630ad7a3-47ac-4ea1-9c4a-29a537a45f21-0_78-99-3108_20230524011546621.parquet
+"
+1684909583999,"s3://airbnb-nequi/calendar_transfo/6760bed7-ff2f-4658-b7b6-f3005d0b8bb1-0_25-99-3055_20230524011546621.parquet
+"
+1684909584356,"s3://airbnb-nequi/calendar_transfo/686b8818-cc00-41e0-aac1-63ff6f7106e1-0_5-92-3035_20230524011546621.parquet
+"
+1684909584732,"s3://airbnb-nequi/calendar_transfo/694ae23d-7291-49f8-a6e8-d12e9e078226-0_12-92-3042_20230524011546621.parquet
+"
+1684909585067,"s3://airbnb-nequi/calendar_transfo/6d1d2acb-9b83-4322-b89d-c1ab162810f0-0_121-99-3151_20230524011546621.parquet
+"
+1684909585534,"s3://airbnb-nequi/calendar_transfo/70af9f04-5a7b-4176-9238-24000dafc28a-0_39-99-3069_20230524011546621.parquet
+"
+1684909585995,"s3://airbnb-nequi/calendar_transfo/71a37da1-6d59-4bc6-9884-126cd5c9a215-0_67-99-3097_20230524011546621.parquet
+"
+1684909586501,"s3://airbnb-nequi/calendar_transfo/7334f340-e259-4ab8-8313-0a7548cf24d5-0_58-99-3088_20230524011546621.parquet
+"
+1684909586903,"s3://airbnb-nequi/calendar_transfo/75bce0f6-d1c8-40d8-b360-d961cd93be21-0_48-99-3078_20230524011546621.parquet
+"
+1684909587281,"s3://airbnb-nequi/calendar_transfo/787ff837-3dd7-4c63-9a37-0dd2d2d7286b-0_117-99-3147_20230524011546621.parquet
+"
+1684909587650,"s3://airbnb-nequi/calendar_transfo/78ac950a-3890-456e-8d22-219a2f9522b5-0_45-99-3075_20230524011546621.parquet
+"
+1684909588087,"s3://airbnb-nequi/calendar_transfo/78bb1b97-2b15-4210-bc5a-28c263fee2fc-0_106-99-3136_20230524011546621.parquet
+"
+1684909588496,"s3://airbnb-nequi/calendar_transfo/78e976a6-64ed-474c-8f35-206808ee85ef-0_127-106-3157_20230524011546621.parquet
+"
+1684909588863,"s3://airbnb-nequi/calendar_transfo/78f9a95e-4682-4e24-9d8b-53ea01cef9ad-0_8-92-3038_20230524011546621.parquet
+"
+1684909589270,"s3://airbnb-nequi/calendar_transfo/7af0cbde-809a-4f90-b7c1-09deaad353d5-0_22-92-3052_20230524011546621.parquet
+"
+1684909589645,"s3://airbnb-nequi/calendar_transfo/803e1f95-2dd3-4db6-8389-3b140f9fc07a-0_34-99-3064_20230524011546621.parquet
+"
+1684909590103,"s3://airbnb-nequi/calendar_transfo/81bd961b-e0c9-48a6-94f3-7a61e250bee5-0_60-99-3090_20230524011546621.parquet
+"
+1684909590616,"s3://airbnb-nequi/calendar_transfo/82e0c527-cf9c-46d5-a2bb-9974e127117e-0_32-99-3062_20230524011546621.parquet
+"
+1684909590957,"s3://airbnb-nequi/calendar_transfo/838bff29-58fb-45ee-8d11-71f1ee3eb44e-0_93-99-3123_20230524011546621.parquet
+"
+1684909591363,"s3://airbnb-nequi/calendar_transfo/83fa05f7-d5aa-4fa3-913e-c9745cc8230e-0_126-106-3156_20230524011546621.parquet
+"
+1684909591748,"s3://airbnb-nequi/calendar_transfo/8b005b50-a669-43a1-903f-3be3ec0647f8-0_65-99-3095_20230524011546621.parquet
+"
+1684909592149,"s3://airbnb-nequi/calendar_transfo/8d16b3e4-60c2-4f91-9cb5-45a40493dd68-0_54-99-3084_20230524011546621.parquet
+"
+1684909592724,"s3://airbnb-nequi/calendar_transfo/92817949-101b-450d-8009-c4e0fcca7a04-0_111-99-3141_20230524011546621.parquet
+"
+1684909593092,"s3://airbnb-nequi/calendar_transfo/93f08913-55ca-4c61-ae25-d5309a676d84-0_96-99-3126_20230524011546621.parquet
+"
+1684909593596,"s3://airbnb-nequi/calendar_transfo/965ff58f-37b8-4d91-9c05-63a1279deaf8-0_2-85-3032_20230524011546621.parquet
+"
+1684909593998,"s3://airbnb-nequi/calendar_transfo/9d9a5396-9c60-45d6-9457-cee2f6f96b21-0_112-99-3142_20230524011546621.parquet
+"
+1684909594407,"s3://airbnb-nequi/calendar_transfo/9f496e37-eee1-4938-ac1a-c25b0cf4bb0a-0_28-99-3058_20230524011546621.parquet
+"
+1684909594814,"s3://airbnb-nequi/calendar_transfo/a25206bc-f915-41c0-b4fe-f4a678bdd46a-0_100-99-3130_20230524011546621.parquet
+"
+1684909595231,"s3://airbnb-nequi/calendar_transfo/a33c73be-15e8-4f38-bb8c-bb415d9c2dcf-0_31-99-3061_20230524011546621.parquet
+"
+1684909595590,"s3://airbnb-nequi/calendar_transfo/a447c1c0-d9cc-47c5-ad5d-543771348833-0_114-99-3144_20230524011546621.parquet
+"
+1684909596037,"s3://airbnb-nequi/calendar_transfo/a5469e75-7d71-4795-abf3-f8aa1797fa2b-0_1-85-3031_20230524011546621.parquet
+"
+1684909596430,"s3://airbnb-nequi/calendar_transfo/a5fd49b1-4194-4382-a163-3ae6637c2032-0_98-99-3128_20230524011546621.parquet
+"
+1684909596902,"s3://airbnb-nequi/calendar_transfo/a966e61e-387b-4d6c-96df-fc2c467e75ae-0_68-99-3098_20230524011546621.parquet
+"
+1684909597713,"s3://airbnb-nequi/calendar_transfo/aaf8c139-083e-446c-9f68-585bf9716619-0_29-99-3059_20230524011546621.parquet
+"
+1684909598242,"s3://airbnb-nequi/calendar_transfo/ac9f0ab0-dc13-476d-b1a4-b94333de8463-0_90-99-3120_20230524011546621.parquet
+"
+1684909598736,"s3://airbnb-nequi/calendar_transfo/ad0f60b1-192a-4448-afe1-aeef01ab98f8-0_70-99-3100_20230524011546621.parquet
+"
+1684909599238,"s3://airbnb-nequi/calendar_transfo/ae57773d-85c4-4d90-89b7-9260062d3af6-0_49-99-3079_20230524011546621.parquet
+"
+1684909599886,"s3://airbnb-nequi/calendar_transfo/b1348f3d-0ac4-4b49-8db0-4540be9b1be0-0_26-99-3056_20230524011546621.parquet
+"
+1684909600249,"s3://airbnb-nequi/calendar_transfo/b1c28d9b-df9e-4121-b8da-cc5a4dee9b0f-0_118-99-3148_20230524011546621.parquet
+"
+1684909600714,"s3://airbnb-nequi/calendar_transfo/b1f96737-2e64-4245-a0ea-93b1d9935875-0_52-99-3082_20230524011546621.parquet
+"
+1684909601244,"s3://airbnb-nequi/calendar_transfo/b30b0b5d-2725-4ba6-ae35-63f7c4865f7d-0_17-92-3047_20230524011546621.parquet
+"
+1684909601569,"s3://airbnb-nequi/calendar_transfo/b4abd419-e06c-4fbd-bf06-67d63ff863d3-0_53-99-3083_20230524011546621.parquet
+"
+1684909602111,"s3://airbnb-nequi/calendar_transfo/b6bdbb62-531b-44cc-a44c-0cd9f95f5aa7-0_83-99-3113_20230524011546621.parquet
+"
+1684909602453,"s3://airbnb-nequi/calendar_transfo/bbd01672-f91d-464c-abe1-28a65b8eb313-0_75-99-3105_20230524011546621.parquet
+"
+1684909602813,"s3://airbnb-nequi/calendar_transfo/bc99ec95-5958-4657-92c8-0d1aefbb2d39-0_108-99-3138_20230524011546621.parquet
+"
+1684909603437,"s3://airbnb-nequi/calendar_transfo/bf7a81d7-02d2-494a-877c-d381f3c2d869-0_42-99-3072_20230524011546621.parquet
+"
+1684909603888,"s3://airbnb-nequi/calendar_transfo/c04ec20f-07b9-4dfa-8d32-92b596e1e103-0_97-99-3127_20230524011546621.parquet
+"
+1684909604323,"s3://airbnb-nequi/calendar_transfo/c3bb6260-4fa9-43b3-902f-90f4a8da51a7-0_99-99-3129_20230524011546621.parquet
+"
+1684909604781,"s3://airbnb-nequi/calendar_transfo/c3d70f02-dc1c-4e29-8be4-dc1200c3be5e-0_103-99-3133_20230524011546621.parquet
+"
+1684909605291,"s3://airbnb-nequi/calendar_transfo/c41c9326-7c2d-4c63-b4e1-727bf35e8873-0_66-99-3096_20230524011546621.parquet
+"
+1684909605777,"s3://airbnb-nequi/calendar_transfo/ca772d0f-13e0-4a33-83d3-8f63092daf6f-0_71-99-3101_20230524011546621.parquet
+"
+1684909606120,"s3://airbnb-nequi/calendar_transfo/cec6ca57-9c1d-4152-b0f2-aa98bf4d109b-0_81-99-3111_20230524011546621.parquet
+"
+1684909606697,"s3://airbnb-nequi/calendar_transfo/d062ccfa-65a1-4e3d-bead-b5748431f8e8-0_105-99-3135_20230524011546621.parquet
+"
+1684909607305,"s3://airbnb-nequi/calendar_transfo/d31b108a-9f56-4e3c-8d56-068c4356c5aa-0_113-99-3143_20230524011546621.parquet
+"
+1684909607844,"s3://airbnb-nequi/calendar_transfo/d5c2a093-1039-4bf9-aba5-acbdb04479b3-0_15-92-3045_20230524011546621.parquet
+"
+1684909608182,"s3://airbnb-nequi/calendar_transfo/d5dd1d6b-928f-48e1-b44b-4d6e77dd7ed8-0_33-99-3063_20230524011546621.parquet
+"
+1684909608543,"s3://airbnb-nequi/calendar_transfo/d69e1643-8e49-4ebf-8740-9bfd77e385f2-0_4-85-3034_20230524011546621.parquet
+"
+1684909608902,"s3://airbnb-nequi/calendar_transfo/d8d7beb0-fc12-427b-baee-17ef81b5ca60-0_41-99-3071_20230524011546621.parquet
+"
+1684909609643,"s3://airbnb-nequi/calendar_transfo/dba2ec14-feaf-459e-b479-54f964638736-0_13-92-3043_20230524011546621.parquet
+"
+1684909609987,"s3://airbnb-nequi/calendar_transfo/dd168d05-f640-4145-86a0-442af192dbde-0_27-99-3057_20230524011546621.parquet
+"
+1684909610368,"s3://airbnb-nequi/calendar_transfo/dd962fad-be9e-448b-a395-3e80457b3147-0_74-99-3104_20230524011546621.parquet
+"
+1684909610896,"s3://airbnb-nequi/calendar_transfo/df7c7d6b-6ba7-4c53-a8b9-d2f5657b7c47-0_115-99-3145_20230524011546621.parquet
+"
+1684909611449,"s3://airbnb-nequi/calendar_transfo/e15611e4-109a-4b9b-9b44-e123d93babff-0_104-99-3134_20230524011546621.parquet
+"
+1684909611828,"s3://airbnb-nequi/calendar_transfo/e2edc7a2-61e8-46b8-9b69-3246f8f46d53-0_50-99-3080_20230524011546621.parquet
+"
+1684909612163,"s3://airbnb-nequi/calendar_transfo/e47eb28a-af2a-48d0-945d-8c4c188a62f8-0_91-99-3121_20230524011546621.parquet
+"
+1684909612470,"s3://airbnb-nequi/calendar_transfo/e562ba8c-403d-48aa-9d97-3f1e05083acc-0_109-99-3139_20230524011546621.parquet
+"
+1684909613092,"s3://airbnb-nequi/calendar_transfo/eaa3ec63-c8ff-4e6f-afb9-cc60e71bbc0e-0_23-92-3053_20230524011546621.parquet
+"
+1684909613429,"s3://airbnb-nequi/calendar_transfo/ec4fd83f-f160-4421-9621-187aa4fde891-0_87-99-3117_20230524011546621.parquet
+"
+1684909613755,"s3://airbnb-nequi/calendar_transfo/ecdf7869-31ab-40cb-b09c-e8fa2c3f240b-0_30-99-3060_20230524011546621.parquet
+"
+1684909614223,"s3://airbnb-nequi/calendar_transfo/ee58fb07-bee0-48c1-9f24-de4c9b82755e-0_40-99-3070_20230524011546621.parquet
+"
+1684909614517,"s3://airbnb-nequi/calendar_transfo/eedca4e9-8ef7-4f50-9f93-cabacb893dbd-0_69-99-3099_20230524011546621.parquet
+"
+1684909615288,"s3://airbnb-nequi/calendar_transfo/effe9f1a-7770-406d-ad11-504a566a123e-0_101-99-3131_20230524011546621.parquet
+"
+1684909615903,"s3://airbnb-nequi/calendar_transfo/f0b5a6ee-2637-46a5-a916-307759b7bb07-0_6-92-3036_20230524011546621.parquet
+"
+1684909616195,"s3://airbnb-nequi/calendar_transfo/f1383048-7b89-4e63-ae97-bdab4e2093c3-0_63-99-3093_20230524011546621.parquet
+"
+1684909616575,"s3://airbnb-nequi/calendar_transfo/f1c2dc39-5db4-4bfb-b904-0fabb24995f0-0_123-99-3153_20230524011546621.parquet
+"
+1684909617052,"s3://airbnb-nequi/calendar_transfo/f2127fbd-2b9b-4a70-a83f-6c03f490d1d9-0_3-85-3033_20230524011546621.parquet
+"
+1684909617379,"s3://airbnb-nequi/calendar_transfo/f858484f-c849-4772-9cac-54a708f1f9ed-0_46-99-3076_20230524011546621.parquet
+"
+1684909617814,"s3://airbnb-nequi/calendar_transfo/f8df1e53-cb36-43db-b6ce-0fc93f6f67b8-0_38-99-3068_20230524011546621.parquet
+"
+1684909618380,"s3://airbnb-nequi/calendar_transfo/f94c004a-d00a-43d3-81a2-5d087d8328ca-0_9-92-3039_20230524011546621.parquet
+"
+1684909618680,"s3://airbnb-nequi/calendar_transfo/fbac6f0f-0b95-4993-a643-3dab3d0226af-0_92-99-3122_20230524011546621.parquet
+"
+1684909619260,"s3://airbnb-nequi/calendar_transfo/fe2b83ae-9dcc-41d9-9ab8-7ca25f7dbc84-0_64-99-3094_20230524011546621.parquet
+"
+1684909636586,"15664741
+"
+1684909662542,"15664741
+"
+1684909691902,"el numero de nulos en el id de la tabla calendar cruda es: 0
+el numero de nulos en el id de la tabla calendar trata es: 0
+ok
+"
+1684909724138,"el numero de $ que contiene la tabla calendar cruda en la columna adjusted_price es 15663629
+el numero de $ que contiene la tabla calendar tratada en la columna adjusted_price es 0
+"
+1684909755776,"el numero de $ que contiene la tabla calendar cruda en la columna price es 15663629
+el numero de $ que contiene la tabla calendar tratada en la columna price es 0
+ok
+esto no se evalua en la tabla calendar
+ok
+"
+1684909785746,"el numero de minimum_nights para la tabla calendar cruda en vacio es 726
+el numero de minimum_nights para la tabla calendar tratada en vacio es 0
+ok
+el pipeline funciono de manera correcta para la base calendar
+"
+1684909821074,"el numero de duplicados de la tabla calendar cruda es: 0
+el numero de duplicados de la tabla calendar trata es: 0
+ok
+"
+1684909854761,"el numero de registros para la tabla calendar cruda es 15664741
+el numero de registros para la tabla calendar tratada es 15664741
+ok
+"
+1684909854768,"los tipos de datos de la tabla calendar cruda son
+"
+1684909854769,"[('listing_id', 'string'), ('date', 'string'), ('available', 'string'), ('price', 'string'), ('adjusted_price', 'string'), ('minimum_nights', 'string'), ('maximum_nights', 'string')]
+los tipos de datos de la tabla calendar tratada son
+[('listing_id', 'string'), ('date', 'string'), ('available', 'string'), ('price', 'int'), ('adjusted_price', 'int'), ('minimum_nights', 'string'), ('maximum_nights', 'string')]
+2
+ok
+hay calidad en los datos de la tabla calendar
+"
+1684909886659,"1
+"
+1684909889001,"[Row(price=150)]
+ok
+se cumplen las pruebas de unidad para la tabla calendar
+"
